@@ -1,80 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kalr — Official Site</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/images/placeholder-hero.svg" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalr's World 🌌</title>
+
+  <!-- AOS (Animate on Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0b0b0b, #000);
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #00ffff33;
+    }
+
+    header h1 {
+      color: #00ffff;
+      font-size: 1.8em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #00ffff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 10px auto;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    footer {
+      padding: 30px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    .btn {
+      background: #00ffff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00ffff;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+      }
+    }
+
+    /* Floating animation */
+    [data-aos] {
+      transition-property: transform, opacity !important;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo">Kalr</div>
-    <nav class="nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
+
+  <header data-aos="fade-down">
+    <h1>🌌 Kalr's World</h1>
+    <nav>
+      <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-      <a class="roblox" href="https://www.roblox.com/users/your-roblox-username/profile" target="_blank" rel="noopener">Roblox</a>
+      <a href="update.html">Update</a>
+      <a href="https://www.roblox.com/users/kalr">Roblox</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="headline">Welcome to Kalr's World</h1>
-        <p class="subhead">Explore my creations, projects, and updates — animated and ready for expansion.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="projects.html">See Projects</a>
-          <a class="btn ghost" href="about.html">About Me</a>
-        </div>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <!-- decorative svg -->
-        <img src="assets/images/placeholder-hero.svg" alt="" />
-      </div>
-    </section>
+  <section data-aos="fade-up">
+    <h2>Welcome to Kalr's World</h2>
+    <p>Explore my creations, projects, and updates — with smooth animations and futuristic vibes.</p>
+    <button class="btn" onclick="window.location.href='update.html'">View Update Timer</button>
+  </section>
 
-    <section class="features">
-      <div class="container grid">
-        <article class="card reveal">
-          <h3>Animated Pages</h3>
-          <p>Smooth transitions, scroll reveal, and micro-interactions for a modern feel.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Projects Gallery</h3>
-          <p>Showcase your Roblox games or other work with cards and lightbox-ready structure.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Easy to Update</h3>
-          <p>Clear folder structure and commented code so you can add pages later.</p>
-        </article>
-      </div>
-    </section>
+  <section data-aos="fade-up">
+    <h2>Animated Pages</h2>
+    <p>Every section smoothly animates when you scroll. Built with AOS & CSS transitions for that pro feel.</p>
+  </section>
 
-    <section class="newsletter">
-      <div class="container">
-        <h2>Stay updated</h2>
-        <p>Placeholder subscription form ready for future backend hookup.</p>
-        <form class="form-inline" onsubmit="return false;">
-          <input type="email" placeholder="you@example.com" aria-label="email" />
-          <button class="btn primary">Subscribe</button>
-        </form>
-      </div>
-    </section>
-  </main>
+  <section data-aos="zoom-in">
+    <h2>Projects Gallery</h2>
+    <p>Showcase your Roblox games, art, or future updates here. You can easily expand this site anytime!</p>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>© <span id="year"></span> Kalr</div>
-      <div class="credit">Made by <strong>Kalr</strong></div>
-      <div class="socials">
-        <a href="https://www.roblox.com/users/your-roblox-username/profile" target="_blank" rel="noopener">Roblox</a>
-      </div>
-    </div>
+  <footer data-aos="fade-up">
+    <p>Made with 💙 by <b>Kalr</b></p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
