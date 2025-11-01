@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kalr — Official Site</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/placeholder-hero.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Kalr</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a class="roblox" href="https://www.roblox.com/users/your-roblox-username/profile" target="_blank" rel="noopener">Roblox</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 class="headline">Welcome to Kalr's World</h1>
+        <p class="subhead">Explore my creations, projects, and updates — animated and ready for expansion.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="projects.html">See Projects</a>
+          <a class="btn ghost" href="about.html">About Me</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- decorative svg -->
+        <img src="assets/images/placeholder-hero.svg" alt="" />
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container grid">
+        <article class="card reveal">
+          <h3>Animated Pages</h3>
+          <p>Smooth transitions, scroll reveal, and micro-interactions for a modern feel.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Projects Gallery</h3>
+          <p>Showcase your Roblox games or other work with cards and lightbox-ready structure.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Easy to Update</h3>
+          <p>Clear folder structure and commented code so you can add pages later.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <h2>Stay updated</h2>
+        <p>Placeholder subscription form ready for future backend hookup.</p>
+        <form class="form-inline" onsubmit="return false;">
+          <input type="email" placeholder="you@example.com" aria-label="email" />
+          <button class="btn primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Kalr</div>
+      <div class="credit">Made by <strong>Kalr</strong></div>
+      <div class="socials">
+        <a href="https://www.roblox.com/users/your-roblox-username/profile" target="_blank" rel="noopener">Roblox</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Kalr</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Kalr</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a class="roblox" href="https://www.roblox.com/users/your-roblox-username/profile" target="_blank" rel="noopener">Roblox</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </header>
+
+  <main class="container contact-page">
+    <section class="contact-form reveal">
+      <h1>Contact</h1>
+      <p class="lead">This is a ready-to-hook contact form. For now it is a placeholder that saves to local storage.</p>
+
+      <form id="contactForm" onsubmit="return false;">
+        <label>
+          Name
+          <input id="name" type="text" placeholder="Your name" required />
+        </label>
+        <label>
+          Message
+          <textarea id="message" rows="6" placeholder="Write your message" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn primary" id="saveBtn">Save (local)</button>
+          <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+        </div>
+      </form>
+      <div id="saved" class="saved-notice" aria-live="polite" hidden>Saved to browser storage ✔</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span id="year4"></span> Kalr</div>
+      <div class="credit">Made by <strong>Kalr</strong></div>
+      <div class="socials">
+        <a href="https://www.roblox.com/users/your-roblox-username/profile" target="_blank" rel="noopener">Roblox</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
