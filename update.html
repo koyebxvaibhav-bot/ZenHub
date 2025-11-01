@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Countdown | Kalr</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a0a0a, #1b1b1b);
+      color: #00ffff;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00ffff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    #countdown {
+      font-size: 2em;
+      font-weight: bold;
+      margin-top: 10px;
+      text-shadow: 0 0 20px #00ffff;
+    }
+    footer {
+      position: absolute;
+      bottom: 15px;
+      color: #888;
+      font-size: 0.9em;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00ffff; }
+      to { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Next Update Countdown ⏳</h1>
+  <div id="countdown">Loading...</div>
+  <footer>Made by Kalr</footer>
+
+  <script>
+    function startCountdown() {
+      const countdownElement = document.getElementById("countdown");
+
+      // If no date saved, start new 7-day timer
+      let targetDate = localStorage.getItem("nextUpdateDate");
+      if (!targetDate || new Date(targetDate) < new Date()) {
+        const now = new Date();
+        now.setDate(now.getDate() + 7);
+        targetDate = now;
+        localStorage.setItem("nextUpdateDate", targetDate);
+      }
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const distance = new Date(targetDate).getTime() - now;
+
+        if (distance <= 0) {
+          countdownElement.textContent = "Update soon!";
+          localStorage.removeItem("nextUpdateDate");
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    startCountdown();
+  </script>
+</body>
+</html>
